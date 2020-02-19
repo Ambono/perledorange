@@ -1,19 +1,16 @@
 import React, { Component } from "react";
+import Entree from './dishes/entrees';
+import Plat from './dishes/plats';
+import Dessert from './dishes/desserts';
+import Vanessa from './vanessa/vanessa';
  
 class Menue extends Component {
   render() {
     return (
-      <div>
-        <h2>Menue</h2>
-        <p>Mauris sem velit, vehicula eget sodales vitae,
-        rhoncus eget sapien:</p>
-        <ol>
-          <li>Nulla pulvinar diam</li>
-          <li>Facilisis bibendum</li>
-          <li>Vestibulum vulputate</li>
-          <li>Eget erat</li>
-          <li>Id porttitor</li>
-        </ol>
+      <div>     
+     <Entree/> 
+     <Plat/> 
+     <Dessert/>
       </div>
     );
   }
