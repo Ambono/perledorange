@@ -1,0 +1,12 @@
+{
+    "IPs":{
+        "SwiftMailer":{
+            "Remote":"http://192.168.0.4:88",
+            "Local":"http://192.168.0.4:88"
+        },
+       "ContactPage":{
+        "Remote":"http://192.168.0.4:60",
+        "Local":"http://192.168.0.4:60"
+       }
+    }
+}

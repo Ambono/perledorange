@@ -35,6 +35,10 @@ ul.header li a {
   background-color: #FFF;
   padding: 20px;
 }
+.contact {
+  background-color: #FFcc77e4;
+  padding: 20px;
+}
 .content h2 {
   padding: 0;
   margin: 0;
@@ -137,4 +141,46 @@ span.price {
   .col-25 {
     margin-bottom: 20px;
   }
+  * {
+    box-sizing: border-box;
+}
+ .App {
+     max-width: 420px;
+     margin: 0 auto;
+}
+ p {
+     text-align: center;
+     font-weight: 500;
+}
+ input[type=text],input[type=email], select, textarea {
+     width: 100%;
+     padding: 12px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+     margin-top: 6px;
+     margin-bottom: 16px;
+     resize: vertical;
+}
+ input[type=submit] {
+     background-color: #4CAF50;
+     color: white;
+     padding: 12px 20px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+}
+ input[type=submit]:hover {
+     background-color: #45a049;
+}
+ .container {
+     border-radius: 5px;
+     background-color: #f2f2f2;
+     padding: 20px;
+}
+
+input.error {
+  border-color: red;
+}
+
 }
