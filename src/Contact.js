@@ -48,12 +48,12 @@ class Contact extends Component {
     switch (name) {
       case "fname":
         errors.fname =
-          value.length < 5 ? "First Name must be 5 characters long!" : "";
+          value.length < 2 ? "First Name must be 5 characters long!" : "";
         break;
 
       case "lname":
         errors.lname =
-          value.length < 5 ? "Last Name must be 5 characters long!" : "";
+          value.length < 2 ? "Last Name must be 5 characters long!" : "";
         break;
 
       case "email":
@@ -72,7 +72,7 @@ class Contact extends Component {
 
   handleSubmit = e => {
    // const API_PATH = "http://192.168.0.21:60/messages/sendcontactmessages.php";
-    const API_PATH ="http://192.168.0.4:60/messages/sendcontactmessages.php"
+    const API_PATH ="https://f62c4a80.ngrok.io/messages/sendcontactmessages.php"
     e.preventDefault();
     axios({
       method: "post",
@@ -95,7 +95,7 @@ class Contact extends Component {
   };
 
   sendEmail = e => {
-    const API_PATH ="http://192.168.0.4:88/index.php"
+    const API_PATH ="https://760646f9.ngrok.io/index.php"
    // const API_PATH = "http://192.168.0.21:88/index.php";
 
     e.preventDefault();
@@ -217,7 +217,7 @@ class Contact extends Component {
             />
             <div>
               {this.state.mailSent && (
-                <div>Thank you for contacting us. Your message has been received</div>
+                <div>Thank you for enquiry. <br/>Your message was successfully sent.<br/> You will be contacted soon. </div>
               )}
             </div>
           </form>
