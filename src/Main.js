@@ -9,10 +9,15 @@ import Booking from "./Booking";
 import Login from "./Login";
 import Blog from "./Blog";
 import Footer from "./Footer";
+//import i18n from './i18n';
+//import { withTranslation } from 'react-i18next';
+
+//https://dev.to/ksushiva/how-to-translate-your-react-js-app-with-i18next-12mn
 
 
 class Main extends Component {
   render() {
+   // const { t } = withTranslation ();
     return (
       <HashRouter>
         <div>
@@ -64,4 +69,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default  Main;

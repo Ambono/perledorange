@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "services": "Services",
+    "menue": "Menue",
+    "references": "References",
+    "booking": "Commandes",
+    "blob": "Blog",
+    "login": "Login",
+    "contact": "Contact"
+  },
+  "messages": {
+    "welcome": "Bienvenu a perledorange"
+  }
+}
