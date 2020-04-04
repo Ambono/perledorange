@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import plat1 from '../img/plat1.PNG'; 
+import { withNamespaces } from "react-i18next";
+
 class Plats extends Component {
   render() {
+    const { t } = this.props;
     return (
-      <div>
-       
-
+      <div style={{ padding: "10px 20px",  margin:"25px", textAlign: "center", color: "purple"}}>
         <div>
-            LES PLATS
+        {t("pages.plats.text.header1")}  
         <div>
+        <div style={{ padding: "10px 20px", textAlign: "center", color: "white"}}>
         <img src={plat1} alt="plat1" /> 
+          </div>   
+       
          
          <div>
          -Velouté de chataigne et fricassés de coquilles saint jacques
@@ -34,4 +38,4 @@ class Plats extends Component {
   }
 }
  
-export default Plats;
+export default withNamespaces()(Plats);

@@ -12,6 +12,7 @@
     "i18next": "^19.3.4",
     "i18next-browser-languagedetector": "^4.0.2",
     "react": "^16.13.0",
+    "react-bootstrap": "^1.0.0",
     "react-burger-menu": "^2.6.13",
     "react-collapse": "^5.0.1",
     "react-dom": "^16.13.0",

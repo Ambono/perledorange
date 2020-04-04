@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import entree1 from '../img/entree1.PNG'; 
+import { withNamespaces } from "react-i18next";
+
 class Entrees extends Component {
   render() {
+    const { t } = this.props;
     return (
       <div>
-            LES ENTREES
+           {t("pages.entrees.text.header1")} 
         <div>
+        <div style={{ padding: "10px 20px", textAlign: "center", color: "white"}}>
         <img src={entree1} alt="entree1" /> 
+          </div>       
          
          <div>
 -crumble de tomate{'\n'}
@@ -30,4 +35,4 @@ class Entrees extends Component {
   }
 }
  
-export default Entrees;
+export default withNamespaces()(Entrees);

@@ -1,42 +1,48 @@
 import React, { Component } from "react";
-import img1 from './img/Rotaryclubprizegarch.PNG'; 
-import img2 from './img/tartardavocat.PNG'; 
+import img1 from "./img/Rotaryclubprizegarch.PNG";
+import img2 from "./img/tartardavocat.PNG";
+import { withNamespaces } from "react-i18next";
+import "./index.css";
 class Services extends Component {
   render() {
+    const { t } = this.props;
     return (
-      <div>
-       <h1>Mes services</h1> 
-       <h2>Le metier de chef à domicile,
-pourquoi travailler avec un chef ?</h2>
-<p>
-Le service que je propose vous permet de recevoir vos convives à travers l’organisation d’un repas de qualité, cela vous libérera de toute contrainte et vous permettra de profiter de vos invités et de votre évènement en toute sérénité.
-</p>
-<p>
-Le service de chef à domicile est un service particulier qui se veut de qualité et qui répond à un besoin.
-</p>
-<p>
-Si vous souhaitez passer une bonne soirée avec votre conjoint, organiser un repas familial, déléguer l’organisation d’un repas d’affaire ou bien déléguer la gestion d’un évènement 2 à 20 personnes. C’est un chef indépendant qu’il vous faut, c’est Vanessa Bonogo qu’il vous faut 😀 !
-</p>
-<div><img src={img1} alt="prizerotaryclub" /><img src={img2} alt="tartar" /></div>
+      <div className="service">
+        <h1>{t("pages.services.text.header1")}</h1>
+        <h2>{t("pages.services.text.header2")}</h2>
+        <p>{t("pages.services.text.paragraph1")}</p>
+        <p>{t("pages.services.text.paragraph2")}</p>
+        <p>{t("pages.services.text.paragraph3")}</p>
+        <div
+          class="center-image"
+          style={{ padding: "10px 20px", textAlign: "center", color: "white" }}
+        >
+          <img src={img1} alt="prizerotaryclub" />
+        </div>
+        <div
+          class="center-image"
+          style={{ padding: "10px 20px", textAlign: "center", color: "white" }}
+        >
+          <img src={img2} alt="tartar" />
+        </div>
 
+        {t("pages.services.text.paragraph4")}
 
-Mon service consiste à vous apporter toute l’assurance et la qualité liées à l’organisation de votre évènement.
-
-<h2>Mes services</h2>
-Lorsque vous decidez de déléguer l’organisation d’un évènement, c’est une confiance que vous accordez:
-<p>Organisation d’évènement:</p>     
+        <h2>{t("pages.services.text.header3")}</h2>
+        {t("pages.services.text.paragraph5")}
+        <p>{t("pages.services.text.paragraph6")}</p>
         <ol>
-          <li>Analyse de votre évènement</li>
-          <li>Proposition de menus</li>
-          <li>Préparation des plats</li>
-          <li>Dressage de la table</li>
-          <li>Service</li>
-          <li>Remise en état de votre lieu de vie</li>         
+          <li>{t("pages.services.text.listitem1")}</li>
+          <li>{t("pages.services.text.listitem2")}</li>
+          <li>{t("pages.services.text.listitem3")}</li>
+          <li>{t("pages.services.text.listitem4")}</li>
+          <li>{t("pages.services.text.listitem5")}</li>
+          <li>{t("pages.services.text.listitem6")}</li>
         </ol>
-<p>Me déléguer votre évènement c’est profiter de votre instant en toute sérénité</p>      
+        <p>{t("pages.services.text.paragraph7")}</p>
       </div>
     );
   }
 }
- 
-export default Services;
+
+export default withNamespaces()(Services);

@@ -8,48 +8,48 @@ import References from "./References";
 import Booking from "./Booking";
 import Login from "./Login";
 import Blog from "./Blog";
-import Footer from "./Footer";
-//import i18n from './i18n';
-//import { withTranslation } from 'react-i18next';
+import { withNamespaces } from "react-i18next";
 
 //https://dev.to/ksushiva/how-to-translate-your-react-js-app-with-i18next-12mn
 
-
 class Main extends Component {
   render() {
-   // const { t } = withTranslation ();
+    const { t } = this.props;
+
     return (
+      
       <HashRouter>
-        <div>
-          
-          <h1>Perledorange</h1>
-         
-           <ul className="header">
+        <div
+          style={{ padding: "10px 20px", textAlign: "center", color: "purple" }}
+        >
+          <ul className="header">
             <li>
-              <NavLink to="/Home">Home</NavLink>
+              <NavLink to="/Home">{t("navbar.home")}</NavLink>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <NavLink to="/services">{t("navbar.services")}</NavLink>
             </li>
             <li>
-              <NavLink to="/menue">Menue</NavLink>
+              <NavLink to="/menue">{t("navbar.menue")}</NavLink>
+            </li>
+{/* 
+            <li>
+              <NavLink to="/reference">{t("navbar.references")}</NavLink>
             </li>
             <li>
-              <NavLink to="/reference">References</NavLink>
+              <NavLink to="/booking">{t("navbar.booking")}</NavLink>
+            </li>          
+            <li>
+              <NavLink to="/login">{t("navbar.login")}</NavLink>
+            </li> */}
+
+            <li>
+              <NavLink to="/blog">{t("navbar.blob")}</NavLink>
             </li>
             <li>
-              <NavLink to="/booking">Booking</NavLink>
+              <NavLink to="/contact">{t("navbar.contact")}</NavLink>
             </li>
-            <li>
-              <NavLink to="/blog">Blog</NavLink>
-            </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact">Contact</NavLink>
-            </li>
-          </ul> 
+          </ul>
 
           <div className="content">
             <Route exact path="/" component={Home} />
@@ -61,12 +61,11 @@ class Main extends Component {
             <Route path="/blog" component={Blog} />
             <Route path="/login" component={Login} />
             <Route path="/contact" component={Contact} />
-          </div>        
-          <Footer />
+          </div>          
         </div>
-      </HashRouter>  
+      </HashRouter>
     );
   }
 }
 
-export default  Main;
+export default withNamespaces()(Main);

@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Footer extends Component {
   render() {
     return (
-      <div>
-       
+      <div class ="footer">
+       <p>@perledorange 2020</p>
       </div>
     );
   }

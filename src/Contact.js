@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { withNamespaces } from "react-i18next";
 
 const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -7,7 +8,7 @@ const validEmailRegex = RegExp(
 
 const validateForm = errors => {
   let valid = true;
-  
+
   Object.values(errors).forEach(
     // if we have an error string set valid to false
     val => val.length > 0 && (valid = false)
@@ -18,7 +19,7 @@ const validateForm = errors => {
 class Contact extends Component {
   constructor(props) {
     super(props);
-    this.state = {    
+    this.state = {
       fname: "",
       lname: "",
       email: "",
@@ -30,15 +31,18 @@ class Contact extends Component {
     };
   }
 
-  validate = ()=> {
-    
-    if (!this.state.fname || !this.state.lname || !this.state.email 
-      || !this.state.number || !this.state.message) {
-     
+  validate = () => {
+    if (
+      !this.state.fname ||
+      !this.state.lname ||
+      !this.state.email ||
+      !this.state.number ||
+      !this.state.message
+    ) {
       return false;
     }
     return true;
-  }
+  };
 
   handleChange = event => {
     event.preventDefault();
@@ -67,12 +71,13 @@ class Contact extends Component {
         break;
     }
 
-    this.setState({ errors, [name]: value });    
+    this.setState({ errors, [name]: value });
   };
 
   handleSubmit = e => {
-   // const API_PATH = "http://192.168.0.21:60/messages/sendcontactmessages.php";
-    const API_PATH ="https://f62c4a80.ngrok.io/messages/sendcontactmessages.php"
+    // const API_PATH = "http://192.168.0.21:60/messages/sendcontactmessages.php";
+    const API_PATH =
+      "https://f62c4a80.ngrok.io/messages/sendcontactmessages.php";
     e.preventDefault();
     axios({
       method: "post",
@@ -95,8 +100,8 @@ class Contact extends Component {
   };
 
   sendEmail = e => {
-    const API_PATH ="https://760646f9.ngrok.io/index.php"
-   // const API_PATH = "http://192.168.0.21:88/index.php";
+    const API_PATH = "https://760646f9.ngrok.io/index.php";
+    // const API_PATH = "http://192.168.0.21:88/index.php";
 
     e.preventDefault();
     axios({
@@ -108,7 +113,7 @@ class Contact extends Component {
       .then(result => {
         this.setState({
           //mailSent: result.data.sent
-          mailSent:true
+          mailSent: true
         });
         console.log(result);
         console.log(this.state);
@@ -120,104 +125,128 @@ class Contact extends Component {
     // .catch(error => this.setState({ error: error.message }));
   };
 
-  
-
   execute = event => {
-   // this.handleChange(e);
-   event.preventDefault();  
-   if (validateForm(this.state.errors) && this.validate()) {
-     console.info("Valid Form");      
-   this.handleSubmit(event);
-   this.sendEmail(event);
-  this.setState({    
-    fname: "",
-    lname: "",
-    email: "",
-    number: "",
-    message: ""});   
-   } else {
-     console.error("Invalid Form");
-     return
-   }
-    
+    // this.handleChange(e);
+    event.preventDefault();
+    if (validateForm(this.state.errors) && this.validate()) {
+      console.info("Valid Form");
+      this.handleSubmit(event);
+      this.sendEmail(event);
+      this.setState({
+        fname: "",
+        lname: "",
+        email: "",
+        number: "",
+        message: ""
+      });
+    } else {
+      console.error("Invalid Form");
+      return;
+    }
   };
-
+/*
+      "firstname": "Prenom",
+        "firstnameph": "Votre prenom",
+        "Lastname": "Nom",
+        "Lastnameph": "Votre Nom",
+        "email": "Email",
+        "emailph": "Votre email",
+        "phone": "Telephone mobile",
+        "phoneph": "Votre telephone mobile",
+        "subject": "Subjet",
+        "subjectph": "Ecrire quelque chose",
+        "submit": "Envoyer",
+*/
   render() {
+    const { t } = this.props;
     const { errors } = this.state;
     return (
       <div className="contact">
-        <p>Contact Me</p>
         <div>
           <form action="#">
-            <label>First Name</label>
+            <label>{t("pages.contact.text.firstname")}</label>
             <input
               type="text"
               id="fname"
               name="fname"
-              placeholder="Your name.."
+              placeholder={t("pages.contact.text.firstnameph")}
               value={this.state.fname}
-              onChange={e => {this.setState({ fname: e.target.value });
-              this.handleChange(e);}}
+              onChange={e => {
+                this.setState({ fname: e.target.value });
+                this.handleChange(e);
+              }}
             />
             {errors.fname.length > 0 && <div>{errors.fname}</div>}
 
-            <label>Last Name</label>
+            <label>{t("pages.contact.text.lastname")}</label>
             <input
               type="text"
               id="lname"
               name="lname"
-              placeholder="Your last name.."
+              placeholder={t("pages.contact.text.lastnameph")}
               value={this.state.lname}
-              onChange={e => {this.setState({ lname: e.target.value });
-              this.handleChange(e)}}
+              onChange={e => {
+                this.setState({ lname: e.target.value });
+                this.handleChange(e);
+              }}
             />
             {errors.lname.length > 0 && <div>{errors.lname}</div>}
             <br />
-            <label>Email</label>
+            <label>{t("pages.contact.text.email")}</label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="Your email"
+              placeholder={t("pages.contact.text.emailph")}
               value={this.state.email}
-              onChange={e => {this.setState({ email: e.target.value }); 
-              this.handleChange(e)}}
+              onChange={e => {
+                this.setState({ email: e.target.value });
+                this.handleChange(e);
+              }}
             />
             {errors.email.length > 0 && <div>{errors.email}</div>}
             <br />
 
-            <label>Mobile phone</label>
+            <label>{t("pages.contact.text.phone")}</label>
             <input
               type="text"
               id="number"
               name="number"
-              placeholder="Your phone"
+              placeholder={t("pages.contact.text.phoneph")}
               value={this.state.number}
-              onChange={e =>{ this.setState({ number: e.target.value });
-              this.handleChange(e)}}             
+              onChange={e => {
+                this.setState({ number: e.target.value });
+                this.handleChange(e);
+              }}
             />
             {errors.number.length > 0 && <div>{errors.number}</div>}
             <br />
 
-            <label>Subject</label>
+            <label>{t("pages.contact.text.subject")}</label>
             <textarea
               id="message"
               name="message"
-              placeholder="Write something.."
+              placeholder={t("pages.contact.text.subjectph")}
               value={this.state.message}
-              onChange={e => {this.setState({ message: e.target.value });
-              this.handleChange(e)}}            
+              onChange={e => {
+                this.setState({ message: e.target.value });
+                this.handleChange(e);
+              }}
             ></textarea>
             {errors.message.length > 0 && <div>{errors.message}</div>}
             <br />
             <input
               type="submit"
               onClick={e => this.execute(e)}
-              value="Submit"
+              value= {t("pages.contact.text.submit")} 
             />
             <div>
               {this.state.mailSent && (
-                <div>Thank you for enquiry. <br/>Your message was successfully sent.<br/> You will be contacted soon. </div>
+                <div>
+                    {t("pages.contact.text.thankyou1")} <br />
+                    {t("pages.contact.text.thankyou2")}
+                  <br />{t("pages.contact.text.thankyou3")}{" "}
+                </div>
               )}
             </div>
           </form>
@@ -227,4 +256,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default withNamespaces()(Contact);

@@ -11,5 +11,150 @@
   },
   "messages": {
     "welcome": "Welcome on perledorange"
+  },
+  "pages": {
+    "home": {
+      "text": {
+        "header1": "Perledorange",
+        "header2": "",
+        "paragraph1": "I am a qualified cook and I tally  15 years experience in french cookery. I felt I needed to share my world and my love for my art. Honor and excellent customner experience are the driving themes of my company « perledorange ».",
+        "paragraph2": "I enjoy the support of people around me in particular my sister « Eliane Bonogo » and « Mémé » who stand inconditionally by my side. Whilst offering my service during my cooking campagnes I put my knowledge in front and look up to winning awards . My numerous prizes are proof of my achievements.",
+        "paragraph3": "I specialise in french kitchen and I am author of the majority of dishes I offer « faits maison ». I cook according to your tastes  as well as your food restrictions whilst adding up seasonal flavours. I work with fresh produces and vegetables of first quality which I order from the best suppliers. When customers asks my service for events I provide them with customized dishes. I also work with catering service partners.",
+        "paragraph4": "",
+        "footer": "Vanessa Bonogo,"
+      }
+    },
+    "services": {
+      "text": {
+        "header1": "My services",
+        "header2": "The job of home based chef - why ask for the service of a chef?",
+        "header3": "What can you expect from my service?",
+        "paragraph1": "The service I offer will help you welcome your invitees via a quality meal and this will give you more confidence and release pressure of yourself as well as allowing you to enjoy their company hence making your event a success.",
+        "paragraph2": "The service of home catering chef is a special service which requires quality and need to answer your requirements. You get this quality with my services.",
+        "paragraph3": "When you wish to have a wonderful evening with your partner or organise a family meal or organise a business meal for 2 to 20 people you have the option of delegating the catering tasks to a chef. You can think about Vanessa Bonogo, the chef you need 😀 ! ",
+        "paragraph4": "My service will help you be confident and provide the quality that your event need. ",
+        "paragraph5": "When you choose to delegate your event catering management to an external entity you must trust them. You will be happy with my catering and I will provide service beyond your expectation.",
+        "paragraph6": "Event management",
+        "paragraph7": "When you put your event catering management in my hands be reassured. You will enjoy every instant in peace.",
+        "listitem1": "Event Analysis",
+        "listitem2": "Menu proposal",
+        "listitem3": "Meal cooking",
+        "listitem4": "Table dressing",
+        "listitem5": "Service",
+        "listitem6": "Reabilitation of your living space",
+        "listitem7": "",
+        "footer": ""
+      }
+    },
+    "menue": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "references": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "booking": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "blob": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "login": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "contact": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "firstname": "First Name",
+        "firstnameph": "Your name",
+        "lastname": "Last Name",
+        "lastnameph": "Your Last name",
+        "email": "Email",
+        "emailph": "Your email",
+        "phone": "Mobile phone",
+        "phoneph": "Your mobile phone",
+        "subject": "Subject",
+        "subjectph": "Write something",
+        "submit": "Submit",       
+        "submitph": "",
+        "thankyou1": "Thank you for your enquiry.",
+        "thankyou2": "Your message was successfully sent.",
+        "thankyou3": "You will here from me very soon.",
+        "footer": ""
+      }
+    },
+    "desserts": {
+      "text": {
+        "header1": "DESSERTS",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "entrees": {
+      "text": {
+        "header1": "STARTERS",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "plats": {
+      "text": {
+        "header1": "MAIN COURSE",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    }
   }
 }

@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import dessert1 from '../img/dessert1.PNG'; 
+import { withNamespaces } from "react-i18next";
  
 class Dessert extends Component {
   render() {
+    const { t } = this.props;
     return (
+      <div  style={{ padding: "10px 20px",  margin:"25px", textAlign: "center", color: "purple"}}>
       <div>
-      <div>
-            LES DESSERTS
+      {t("pages.desserts.text.header1")} 
         <div>
-        <img src={dessert1} alt="dessert1" /> 
+          <div style={{ padding: "10px 20px", textAlign: "center", color: "white"}}>
+          <img src={dessert1} alt="dessert1" /> 
+          </div>
+   
          
          <div>
 -pavlova au fruits exotiques
@@ -33,4 +38,4 @@ class Dessert extends Component {
   }
 }
  
-export default Dessert;
+export default withNamespaces()( Dessert);

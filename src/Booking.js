@@ -7,9 +7,9 @@ import ITEMS from './checkout/items';
 class Booking extends Component {
   render() {
     return (
-      <div class="row">
+      <div class="row ">
       <div class="col-75">
-      <div class="container">
+      <div class="booking">
       <form action="/action_page.php">    
       <div class="row">
          <BILLINGADDRESS/> 
