@@ -155,6 +155,30 @@
         "paragraph4": "",
         "footer": ""
       }
+    },
+    "register": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "firstname": "First Name",
+        "firstnameph": "Your name",
+        "lastname": "Last Name",
+        "lastnameph": "Your Last name",
+        "email": "Email",
+        "emailph": "Your email",
+        "password": "Password",
+        "passwordph": "Your password",
+        "phone": "Mobile phone",
+        "phoneph": "Your mobile phone",
+        "subject": "Subject",
+        "subjectph": "Write something",
+        "submit": "Submit",       
+        "submitph": "",
+        "thankyou1": "Thank you for your enquiry.",
+        "thankyou2": "Your message was successfully sent.",
+        "thankyou3": "You will here from me very soon.",
+        "footer": ""
+      }
     }
   }
 }

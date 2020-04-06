@@ -17,7 +17,6 @@ class Main extends Component {
     const { t } = this.props;
 
     return (
-      
       <HashRouter>
         <div
           style={{ padding: "10px 20px", textAlign: "center", color: "purple" }}
@@ -32,16 +31,17 @@ class Main extends Component {
             <li>
               <NavLink to="/menue">{t("navbar.menue")}</NavLink>
             </li>
-{/* 
+            {/* 
             <li>
               <NavLink to="/reference">{t("navbar.references")}</NavLink>
-            </li>
+            </li> 
             <li>
               <NavLink to="/booking">{t("navbar.booking")}</NavLink>
-            </li>          
+            </li> 
+            */}
             <li>
               <NavLink to="/login">{t("navbar.login")}</NavLink>
-            </li> */}
+            </li>
 
             <li>
               <NavLink to="/blog">{t("navbar.blob")}</NavLink>
@@ -61,7 +61,7 @@ class Main extends Component {
             <Route path="/blog" component={Blog} />
             <Route path="/login" component={Login} />
             <Route path="/contact" component={Contact} />
-          </div>          
+          </div>
         </div>
       </HashRouter>
     );
