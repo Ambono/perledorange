@@ -6,7 +6,7 @@ class Dessert extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div  style={{ padding: "10px 20px",  margin:"25px", textAlign: "center", color: "purple"}}>
+      <div class ="dishes" style={{ padding: "10px 20px",  margin:"25px", textAlign: "center", color: "purple"}}>
       <div>
       {t("pages.desserts.text.header1")} 
         <div>

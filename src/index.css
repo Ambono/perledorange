@@ -44,21 +44,66 @@ ul.header li a {
 }
 
 .home {
-  background-color: #ffffff;
+  background-color: #ffcc77e4;
   padding: 20px;
   text-align: left;
   color: #2c292b;
+  padding: 10px 20px;
+  margin: 25px;
+  color: #800080;
 }
 .service {
-  background-color: #ffffff;
+  background-color: #ffcc77e4;
   padding: 20px;
   text-align: left;
   color: #2c292b;
+  padding: 10px 20px;
+  margin: 25px;
+  color: #800080;
+}
+
+.dishes {
+  background-color: #ffcc77e4;
+  padding: 20px;
+  text-align: center;
+  color: #2c292b;
+  padding: 10px 20px;
+  margin: 25px;
+  color: #800080;
 }
 
 .contact {
   background-color: #ffcc77e4;
   padding: 20px;
+ 
+  text-align:right;
+  color: #2c292b;
+  padding: 10px 20px;
+  margin: 25px;
+  color: #800080;
+}
+
+
+.container {
+  background-color: #e714a1;
+  padding: 5px 20px 15px 20px;
+  border-radius: 3px;
+  text-align:right;
+  color: #2c292b;
+  padding: 10px 20px;
+  margin: 25px;
+  color: #800080;
+}
+
+
+#container_content{
+  width:75%;
+  align-content: left;
+  }
+
+#contact_content{
+width:75%;
+align-content: left;
 }
 
 .content {
@@ -111,18 +156,15 @@ code {
   padding: 0 16px;
 }
 
-.container {
-  background-color: #e714a1;
-  padding: 5px 20px 15px 20px;
-  border: 1px solid #d3d3d3;
-  border-radius: 3px;
-}
+
 
 .footer {
-  background-color: #d3d3d3;   
+  background-color:	#CFB53B;
   border-radius: 3px;
   align-content: center;
-  height:100px;
+  text-align: center;
+  height: 100px;
+  color:#ffffff
 }
 
 input[type="text"] {
@@ -141,6 +183,13 @@ input[type="email"] {
   border-radius: 3px;
 }
 
+input[type="password"] {
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
 input[type="submit"] {
   background-color: #4caf50;
   width: 50%;
@@ -218,7 +267,7 @@ span.price {
     border-color: red;
   }
 
-  .div-separator{
+  .div-separator {
     top: 40px;
     bottom: 40px;
   }

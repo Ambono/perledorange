@@ -1,27 +1,71 @@
 import React, { Component } from "react";
 import { Route, NavLink, HashRouter } from "react-router-dom";
+
+import Dropdown from "react-bootstrap/Dropdown";
 import Home from "./Home";
 import Services from "./Services";
 import Contact from "./Contact";
 import Menue from "./Menue";
 import References from "./References";
 import Booking from "./Booking";
-import Login from "./Login";
+import Login from "./RegisterLoginLogout/Login";
+import Loginscreen from "./RegisterLoginLogout/Loginscreen";
+import LoginPage from "./RegisterLoginLogout/Login/LoginPage";
+
+
 import Blog from "./Blog";
 import { withNamespaces } from "react-i18next";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from 'react-bootstrap/Nav'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 //https://dev.to/ksushiva/how-to-translate-your-react-js-app-with-i18next-12mn
+
+//https://react-bootstrap.github.io
 
 class Main extends Component {
   render() {
     const { t } = this.props;
-
+   
     return (
       <HashRouter>
         <div
           style={{ padding: "10px 20px", textAlign: "center", color: "purple" }}
         >
-          <ul className="header">
+
+{/* <Nav >
+      <Nav.Item>
+      <NavLink to="/Home">{t("navbar.home")}</NavLink>
+      </Nav.Item>
+      <Nav.Item>
+      <NavLink to="/services">{t("navbar.services")}</NavLink>       
+      </Nav.Item>
+      <Nav.Item>
+      <NavLink to="/menue">{t("navbar.menue")}</NavLink>
+      </Nav.Item>
+      <Nav.Item>
+      <NavLink to="/blog">{t("navbar.blob")}</NavLink>
+      </Nav.Item>
+      <Nav.Item>
+      <NavLink to="/contact">{t("navbar.contact")}</NavLink>
+      </Nav.Item>
+     
+      <Dropdown >
+  <Dropdown.Toggle >My account</Dropdown.Toggle>
+  <Dropdown.Menu>
+    <Dropdown.Item>Login</Dropdown.Item>
+  </Dropdown.Menu>
+  <Dropdown.Menu>
+    <Dropdown.Item>Register</Dropdown.Item>
+  </Dropdown.Menu>
+  <Dropdown.Menu>
+    <Dropdown.Item>Logout</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+    </Nav>
+    */}
+          <ul className="header" style={{ backgroundColor: 	"#CFB53B" }}>
             <li>
               <NavLink to="/Home">{t("navbar.home")}</NavLink>
             </li>
@@ -38,9 +82,15 @@ class Main extends Component {
             <li>
               <NavLink to="/booking">{t("navbar.booking")}</NavLink>
             </li> 
-            */}
+            
             <li>
-              <NavLink to="/login">{t("navbar.login")}</NavLink>
+              <NavLink to="/login">{t("navbar.login")}</NavLink>            
+            </li>
+*/}
+           
+
+            <li>
+              <NavLink to="/loginscreen">{t("navbar.login")}</NavLink>            
             </li>
 
             <li>
@@ -49,8 +99,10 @@ class Main extends Component {
             <li>
               <NavLink to="/contact">{t("navbar.contact")}</NavLink>
             </li>
+          
           </ul>
-
+      
+            
           <div className="content">
             <Route exact path="/" component={Home} />
             <Route path="/Home" component={Home} />
@@ -59,10 +111,11 @@ class Main extends Component {
             <Route path="/reference" component={References} />
             <Route path="/booking" component={Booking} />
             <Route path="/blog" component={Blog} />
-            <Route path="/login" component={Login} />
+            <Route path="/loginscreen" component={Loginscreen} />
             <Route path="/contact" component={Contact} />
           </div>
         </div>
+
       </HashRouter>
     );
   }

@@ -6,12 +6,12 @@ const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 );
 
-const validateForm = errors => {
+const validateForm = (errors) => {
   let valid = true;
 
   Object.values(errors).forEach(
     // if we have an error string set valid to false
-    val => val.length > 0 && (valid = false)
+    (val) => val.length > 0 && (valid = false)
   );
   return valid;
 };
@@ -27,7 +27,7 @@ class Contact extends Component {
       message: "",
       mailSent: false,
       error: null,
-      errors: { fname: "", lname: "", email: "", number: "", message: "" }
+      errors: { fname: "", lname: "", email: "", number: "", message: "" },
     };
   }
 
@@ -44,7 +44,7 @@ class Contact extends Component {
     return true;
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
     let errors = this.state.errors;
@@ -74,7 +74,7 @@ class Contact extends Component {
     this.setState({ errors, [name]: value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     // const API_PATH = "http://192.168.0.21:60/messages/sendcontactmessages.php";
     const API_PATH =
       "https://f62c4a80.ngrok.io/messages/sendcontactmessages.php";
@@ -83,23 +83,23 @@ class Contact extends Component {
       method: "post",
       url: `${API_PATH}`,
 
-      data: this.state
+      data: this.state,
     })
-      .then(result => {
+      .then((result) => {
         this.setState({
-          mailSent: result.data.sent
+          mailSent: result.data.sent,
         });
         console.log(result);
         console.log(this.state);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         //this.setState({ error: error.message })
         console.log(error);
       });
     // .catch(error => this.setState({ error: error.message }));
   };
 
-  sendEmail = e => {
+  sendEmail = (e) => {
     const API_PATH = "https://760646f9.ngrok.io/index.php";
     // const API_PATH = "http://192.168.0.21:88/index.php";
 
@@ -108,24 +108,24 @@ class Contact extends Component {
       method: "post",
       url: `${API_PATH}`,
 
-      data: this.state
+      data: this.state,
     })
-      .then(result => {
+      .then((result) => {
         this.setState({
           //mailSent: result.data.sent
-          mailSent: true
+          mailSent: true,
         });
         console.log(result);
         console.log(this.state);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         //this.setState({ error: error.message })
         console.log(error);
       });
     // .catch(error => this.setState({ error: error.message }));
   };
 
-  execute = event => {
+  execute = (event) => {
     // this.handleChange(e);
     event.preventDefault();
     if (validateForm(this.state.errors) && this.validate()) {
@@ -137,14 +137,14 @@ class Contact extends Component {
         lname: "",
         email: "",
         number: "",
-        message: ""
+        message: "",
       });
     } else {
       console.error("Invalid Form");
       return;
     }
   };
-/*
+  /*
       "firstname": "Prenom",
         "firstnameph": "Votre prenom",
         "Lastname": "Nom",
@@ -161,8 +161,8 @@ class Contact extends Component {
     const { t } = this.props;
     const { errors } = this.state;
     return (
-      <div className="contact">
-        <div>
+      <div className="contact ">
+        <div id="contact_content">
           <form action="#">
             <label>{t("pages.contact.text.firstname")}</label>
             <input
@@ -171,13 +171,13 @@ class Contact extends Component {
               name="fname"
               placeholder={t("pages.contact.text.firstnameph")}
               value={this.state.fname}
-              onChange={e => {
+              onChange={(e) => {
                 this.setState({ fname: e.target.value });
                 this.handleChange(e);
               }}
             />
             {errors.fname.length > 0 && <div>{errors.fname}</div>}
-
+            <br />
             <label>{t("pages.contact.text.lastname")}</label>
             <input
               type="text"
@@ -185,7 +185,7 @@ class Contact extends Component {
               name="lname"
               placeholder={t("pages.contact.text.lastnameph")}
               value={this.state.lname}
-              onChange={e => {
+              onChange={(e) => {
                 this.setState({ lname: e.target.value });
                 this.handleChange(e);
               }}
@@ -199,7 +199,7 @@ class Contact extends Component {
               name="email"
               placeholder={t("pages.contact.text.emailph")}
               value={this.state.email}
-              onChange={e => {
+              onChange={(e) => {
                 this.setState({ email: e.target.value });
                 this.handleChange(e);
               }}
@@ -214,7 +214,7 @@ class Contact extends Component {
               name="number"
               placeholder={t("pages.contact.text.phoneph")}
               value={this.state.number}
-              onChange={e => {
+              onChange={(e) => {
                 this.setState({ number: e.target.value });
                 this.handleChange(e);
               }}
@@ -228,7 +228,7 @@ class Contact extends Component {
               name="message"
               placeholder={t("pages.contact.text.subjectph")}
               value={this.state.message}
-              onChange={e => {
+              onChange={(e) => {
                 this.setState({ message: e.target.value });
                 this.handleChange(e);
               }}
@@ -237,19 +237,23 @@ class Contact extends Component {
             <br />
             <input
               type="submit"
-              onClick={e => this.execute(e)}
-              value= {t("pages.contact.text.submit")} 
+              onClick={(e) => this.execute(e)}
+              value={t("pages.contact.text.submit")}
             />
             <div>
               {this.state.mailSent && (
                 <div>
-                    {t("pages.contact.text.thankyou1")} <br />
-                    {t("pages.contact.text.thankyou2")}
-                  <br />{t("pages.contact.text.thankyou3")}{" "}
+                  {t("pages.contact.text.thankyou1")} <br />
+                  {t("pages.contact.text.thankyou2")}
+                  <br />
+                  {t("pages.contact.text.thankyou3")}{" "}
                 </div>
               )}
             </div>
           </form>
+
+
+     
         </div>
       </div>
     );
