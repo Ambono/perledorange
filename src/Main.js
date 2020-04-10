@@ -10,10 +10,7 @@ import References from "./References";
 import Booking from "./Booking";
 import Login from "./RegisterLoginLogout/Login";
 import Loginscreen from "./RegisterLoginLogout/Loginscreen";
-import LoginPage from "./RegisterLoginLogout/Login/LoginPage";
-
-
-import Blog from "./Blog";
+import Blog from "./Blog/Blog";
 import { withNamespaces } from "react-i18next";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from 'react-bootstrap/Nav'
@@ -65,7 +62,7 @@ class Main extends Component {
 </Dropdown>
     </Nav>
     */}
-          <ul className="header" style={{ backgroundColor: 	"#CFB53B" }}>
+          <ul className="header" >
             <li>
               <NavLink to="/Home">{t("navbar.home")}</NavLink>
             </li>

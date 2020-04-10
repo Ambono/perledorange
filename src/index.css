@@ -25,7 +25,7 @@ ul.header li {
   margin: 0;
 }
 ul.header {
-  background-color: #111;
+  background-color:#CFB53B;
   padding: 0;
 }
 ul.header li a {
@@ -36,6 +36,12 @@ ul.header li a {
   display: inline-block;
 }
 
+#div_firstpage{
+  background-image: url("./img/accueil.PNG"), url("./img/pages.PNG");
+  background-repeat: no-repeat, repeat;
+  background-color: #cccccc;
+  
+}
 .booking {
   background-color: #c0c0c0;
   padding: 5px 20px 15px 20px;
@@ -46,8 +52,7 @@ ul.header li a {
 .home {
   background-color: #ffcc77e4;
   padding: 20px;
-  text-align: left;
-  color: #2c292b;
+  text-align: left; 
   padding: 10px 20px;
   margin: 25px;
   color: #800080;
@@ -56,7 +61,6 @@ ul.header li a {
   background-color: #ffcc77e4;
   padding: 20px;
   text-align: left;
-  color: #2c292b;
   padding: 10px 20px;
   margin: 25px;
   color: #800080;
@@ -65,19 +69,16 @@ ul.header li a {
 .dishes {
   background-color: #ffcc77e4;
   padding: 20px;
-  text-align: center;
-  color: #2c292b;
+  text-align: center; 
   padding: 10px 20px;
   margin: 25px;
-  color: #800080;
+  color: #800080; 
 }
 
 .contact {
   background-color: #ffcc77e4;
-  padding: 20px;
- 
-  text-align:right;
-  color: #2c292b;
+  padding: 20px; 
+  text-align:right; 
   padding: 10px 20px;
   margin: 25px;
   color: #800080;
@@ -85,11 +86,10 @@ ul.header li a {
 
 
 .container {
-  background-color: #e714a1;
+  background-color: #ffcc77e4;
   padding: 5px 20px 15px 20px;
   border-radius: 3px;
-  text-align:right;
-  color: #2c292b;
+  text-align:right; 
   padding: 10px 20px;
   margin: 25px;
   color: #800080;
@@ -107,7 +107,7 @@ align-content: left;
 }
 
 .content {
-  padding: 20px;
+  padding: 60px;
 }
 
 .content h2 {

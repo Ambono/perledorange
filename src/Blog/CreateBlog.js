@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withNamespaces } from "react-i18next";
-import Login from "./Login";
+import Login from "../RegisterLoginLogout/Login";
 
 const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -17,7 +17,7 @@ const validateForm = (errors) => {
   return valid;
 };
 
-class Register extends Component {
+class CreateBlog extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -292,4 +292,4 @@ class Register extends Component {
   }
 }
 
-export default withNamespaces()(Register);
+export default withNamespaces()(CreateBlog);

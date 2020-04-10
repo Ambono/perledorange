@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Blog extends Component {
   render() {
     return (
-      <div>
+      <div class="container">
         Blog
 Mon envolé dans la cuisine
 Posted on décembre 8, 2018

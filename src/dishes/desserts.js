@@ -6,11 +6,11 @@ class Dessert extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div class ="dishes" style={{ padding: "10px 20px",  margin:"25px", textAlign: "center", color: "purple"}}>
+      <div className ="dishes" >
       <div>
       {t("pages.desserts.text.header1")} 
         <div>
-          <div style={{ padding: "10px 20px", textAlign: "center", color: "white"}}>
+          <div>
           <img src={dessert1} alt="dessert1" /> 
           </div>
    

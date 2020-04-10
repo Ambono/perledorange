@@ -6,7 +6,7 @@
     "references": "References",
     "booking": "Bookings",
     "blob": "Blog",
-    "login": "Login",
+    "login": "My account",
     "contact": "Contact"
   },
   "messages": {
@@ -92,13 +92,34 @@
     },
     "login": {
       "text": {
-        "header1": "",
+        "header1": "Login",
         "header2": "",
-        "paragraph1": "",
-        "paragraph2": "",
-        "paragraph3": "",
-        "paragraph4": "",
+        "firstname": "First Name",
+        "firstnameph": "Your name",
+        "lastname": "Last Name",
+        "lastnameph": "Your Last name",
+        "email": "Email",
+        "emailph": "Your email",
+        "password": "Password",
+        "passwordph": "Your password",
+        "phone": "Mobile phone",
+        "phoneph": "Your mobile phone",
+        "subject": "Subject",
+        "subjectph": "Write something",
+        "submit": "Login",       
+        "submitph": "",
+        "thankyou1": "Thank you for your enquiry.",
+        "thankyou2": "Your message was successfully sent.",
+        "thankyou3": "You will here from me very soon.",
         "footer": ""
+      }
+    },
+
+    "loginscreen": {
+      "text": {
+        "submit": "Login",
+        "loginmessage":  "Already registered.Go to Login",
+        "registermessage": "Not registered yet, Register Now"
       }
     },
     "contact": {
@@ -158,7 +179,7 @@
     },
     "register": {
       "text": {
-        "header1": "",
+        "header1": "Register",
         "header2": "",
         "firstname": "First Name",
         "firstnameph": "Your name",
@@ -169,41 +190,17 @@
         "password": "Password",
         "passwordph": "Your password",
         "phone": "Mobile phone",
-        "phoneph": "Your mobile phone",
+        "phoneph": "Your mobile phone",       
         "subject": "Subject",
         "subjectph": "Write something",
-        "submit": "Register",       
+        "submit": "Submit",       
         "submitph": "",
-        "thankyou1": "Thank you for your enquiry.",
-        "thankyou2": "Your message was successfully sent.",
-        "thankyou3": "You will here from me very soon.",
+        "thankyou1": "Thank you for your registering.",
+        "thankyou2": "Your registration was successfully sent.",
+        "thankyou3": "Please proceed to login with your user name and password",
         "footer": ""
       }
-    },
-      "login": {
-        "text": {
-          "header1": "",
-          "header2": "",
-          "firstname": "First Name",
-          "firstnameph": "Your name",
-          "lastname": "Last Name",
-          "lastnameph": "Your Last name",
-          "email": "Email",
-          "emailph": "Your email",
-          "password": "Password",
-          "passwordph": "Your password",
-          "phone": "Mobile phone",
-          "phoneph": "Your mobile phone",
-          "subject": "Subject",
-          "subjectph": "Write something",
-          "submit": "Login",       
-          "submitph": "",
-          "thankyou1": "Thank you for your enquiry.",
-          "thankyou2": "Your message was successfully sent.",
-          "thankyou3": "You will here from me very soon.",
-          "footer": ""
-        }
-      }
+    }    
     
   }
 }

@@ -6,11 +6,11 @@ class Plats extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div class ="dishes" style={{ }}>
+      <div className ="dishes">
         <div>
         {t("pages.plats.text.header1")}  
         <div>
-        <div style={{ padding: "10px 20px", textAlign: "center", color: "white"}}>
+        <div>
         <img src={plat1} alt="plat1" /> 
           </div>   
        

@@ -144,24 +144,12 @@ class Contact extends Component {
       return;
     }
   };
-  /*
-      "firstname": "Prenom",
-        "firstnameph": "Votre prenom",
-        "Lastname": "Nom",
-        "Lastnameph": "Votre Nom",
-        "email": "Email",
-        "emailph": "Votre email",
-        "phone": "Telephone mobile",
-        "phoneph": "Votre telephone mobile",
-        "subject": "Subjet",
-        "subjectph": "Ecrire quelque chose",
-        "submit": "Envoyer",
-*/
+
   render() {
     const { t } = this.props;
     const { errors } = this.state;
     return (
-      <div className="contact ">
+      <div className="contact">
         <div id="contact_content">
           <form action="#">
             <label>{t("pages.contact.text.firstname")}</label>

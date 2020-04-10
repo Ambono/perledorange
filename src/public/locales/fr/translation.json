@@ -6,7 +6,7 @@
     "references": "References",
     "booking": "Commandes",
     "blob": "Blog",
-    "login": "Login",
+    "login": "Mon compte",
     "contact": "Contact"
   },
   "messages": {
@@ -92,13 +92,33 @@
     },
     "login": {
       "text": {
-        "header1": "",
+        "header1": "Login",
         "header2": "",
-        "paragraph1": "",
-        "paragraph2": "",
-        "paragraph3": "",
-        "paragraph4": "",
+        "firstname": "Prenom",
+        "firstnameph": "Votre prenom",
+        "lastname": "Nom",
+        "lastnameph": "Votre Nom",
+        "email": "Email",
+        "emailph": "Votre email",
+        "password": "Mot de passe",
+        "passwordph": "Votre mot de passe",
+        "phone": "Telephone mobile",
+        "phoneph": "Votre telephone mobile",
+        "subject": "Subjet",
+        "subjectph": "Ecrire quelque chose",        
+        "submit": "Login",
+        "submitph": "",
+        "thankyou1": "Merci de m'avoir contactee.",
+        "thankyou2": "Votre message a ete recu.",
+        "thankyou3": "Je vous reviendrez le plus tot possible",
         "footer": ""
+      }
+    },
+    "loginscreen": {
+      "text": {
+        "submit": "Login",
+        "loginmessage":  "Vous avez deja un, compte veuillez login",
+        "registermessage": "Vous n'avez pas encore un compte, veuiller vous inscrire svp."
       }
     },
     "contact": {
@@ -158,7 +178,7 @@
     } ,
     "register": {
       "text": {
-        "header1": "",
+        "header1": "Creez votre compte",
         "header2": "",
         "firstname": "Prenom",
         "firstnameph": "Votre prenom",
@@ -169,41 +189,17 @@
         "password": "Mot de passe",
         "passwordph": "Votre mot de passe",
         "phone": "Telephone mobile",
-        "phoneph": "Votre telephone mobile",
+        "phoneph": "Votre telephone mobile",      
         "subject": "Subjet",
         "subjectph": "Ecrire quelque chose",        
         "submit": "Envoyer",
         "submitph": "",
-        "thankyou1": "Merci de m'avoir contactee.",
-        "thankyou2": "Votre message a ete recu.",
-        "thankyou3": "Je vous reviendrez le plus tot possible",
+        "thankyou1": "Merci de vous etes inscrit",
+        "thankyou2": "Votre demande d'inscription a ete recu.",
+        "thankyou3": "Procedez a votre login avec votre username et mot de passe ",
         "footer": ""
       }
-    },
-      "login": {
-        "text": {
-          "header1": "",
-          "header2": "",
-          "firstname": "Prenom",
-          "firstnameph": "Votre prenom",
-          "lastname": "Nom",
-          "lastnameph": "Votre Nom",
-          "email": "Email",
-          "emailph": "Votre email",
-          "password": "Mot de passe",
-          "passwordph": "Votre mot de passe",
-          "phone": "Telephone mobile",
-          "phoneph": "Votre telephone mobile",
-          "subject": "Subjet",
-          "subjectph": "Ecrire quelque chose",        
-          "submit": "Login",
-          "submitph": "",
-          "thankyou1": "Merci de m'avoir contactee.",
-          "thankyou2": "Votre message a ete recu.",
-          "thankyou3": "Je vous reviendrez le plus tot possible",
-          "footer": ""
-        }
-      }
+    }      
     
   }
 }

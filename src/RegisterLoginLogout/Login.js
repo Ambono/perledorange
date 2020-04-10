@@ -1,51 +1,46 @@
 import React, { Component } from "react";
 import axios from "axios";
-import i18n from '../i18n';
-import { withNamespaces } from 'react-i18next';
-
+import i18n from "../i18n";
+import { withNamespaces } from "react-i18next";
+import { Redirect } from "react-router";
+import Home from "../Home";
+import MyPage from "./MyPage";
 
 const validEmailRegex = RegExp(
-    /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+  /^(([^<>()\\[\]\\.,;:\s@\\"]+(\.[^<>()\\[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@(([^<>()[\]\\.,;:\s@\\"]+\.)+[^<>()[\]\\.,;:\s@\\"]{2,})$/i
+);
+
+const validateForm = (errors) => {
+  let valid = true;
+
+  Object.values(errors).forEach(
+    // if we have an error string set valid to false
+    (val) => val.length > 0 && (valid = false)
   );
-  
-  const validateForm = (errors) => {
-    let valid = true;
-  
-    Object.values(errors).forEach(
-      // if we have an error string set valid to false
-      (val) => val.length > 0 && (valid = false)
-    );
-    return valid;
-  };
-  
+  return valid;
+};
 
 class Login extends Component {
+  // componentDidMount() {
+  //   axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
+  //     console.log(res);
+  //     this.setState({ persons: res.data });
+  //   });
+  // };
 
-
-  componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
-      console.log(res);
-      this.setState({ persons: res.data });
-    });
-  };
-
-  
-constructor(props) {
+  constructor(props) {
     super(props);
-    this.state = { 
-        persons: [],    
-      email: "",     
-      password: "",     
+    this.state = {
+      email: "",
+      password: "",
+      isLoggedIn: false,
       error: null,
-      errors: {  email: "",  password:""},
+      errors: { email: "", password: "" },
     };
   }
 
   validate = () => {
-    if (    
-      !this.state.email ||     
-      !this.state.password      
-    ) {
+    if (!this.state.email || !this.state.password) {
       return false;
     }
     return true;
@@ -57,14 +52,13 @@ constructor(props) {
     let errors = this.state.errors;
 
     switch (name) {
-      
       case "password":
         errors.password =
           value.length < 4 ? "Password must be 6 characters long!" : "";
         break;
       case "email":
         errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
-        break;     
+        break;
       default:
         break;
     }
@@ -73,8 +67,10 @@ constructor(props) {
   };
 
   handleSubmit = (e) => {
-    const API_PATH = "http://localhost:50/RegisterLogin/Register.php";
+    const BASE_URL = "http://localhost:50/perledorange/serverperledorange";
+    const API_PATH = BASE_URL + "/RegisterLogin/LoginMaker.php";
     //const API_PATH ="https://f62c4a80.ngrok.io/messages/sendcontactmessages.php";
+
     e.preventDefault();
     axios({
       method: "post",
@@ -83,17 +79,15 @@ constructor(props) {
       data: this.state,
     })
       .then((result) => {
-        this.setState({
-          mailSent: result.data.sent,
-        });
-        console.log(result);
-        console.log(this.state);
+        if (result.status === 200) {
+          console.log("REDIRECTION avec status => ", result.status);
+          // how to redirect here
+          this.setState({ isLoggedIn: true });
+        }
       })
       .catch(function (error) {
-        //this.setState({ error: error.message })
         console.log(error);
       });
-    // .catch(error => this.setState({ error: error.message }));
   };
 
   execute = (event) => {
@@ -101,41 +95,41 @@ constructor(props) {
     event.preventDefault();
     if (validateForm(this.state.errors) && this.validate()) {
       console.info("Valid Form");
-      this.handleSubmit(event);      
+      this.handleSubmit(event);
       this.setState({
-      
-        email: "",     
-        password: ""       
+        email: "",
+        password: "",
       });
     } else {
       console.error("Invalid Form");
       return;
     }
   };
-  
 
+  // if (!this.state.isLoggedIn)
+  // {
+  //   // redirect to home if signed up
+  //   <Redirect to={{ pathname: "/Home" }} />
+  // }
   render() {
     const { t } = this.props;
     const { errors } = this.state;
+     if (this.state.isLoggedIn)
+  { 
+    return <Redirect to={{ pathname: "/MyPage" }} />
+  }
     return (
-        <div>
-         <div>
-         <ul>
-        { this.state.persons.map(person => <li>{person.name}</li>) }
-      </ul>
-      </div>
-
       <div className="container">
-        <div  id ="container_content">
+        <div id="container_content">
+          <h1>{t("pages.login.text.header1")}</h1>
           <form action="#">
-            
             <br />
-            <label>{t("pages.register.text.email")}</label>
+            <label>{t("pages.login.text.email")}</label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder={t("pages.register.text.emailph")}
+              placeholder={t("pages.login.text.emailph")}
               value={this.state.email}
               onChange={(e) => {
                 this.setState({ email: e.target.value });
@@ -144,16 +138,18 @@ constructor(props) {
             />
             {errors.email.length > 0 && <div></div>}
             <br />
-
-            {errors.password.length > 0 && <div>{errors.email} or  {errors.password}</div>}
+            {errors.password.length > 0 && (
+              <div>
+                {errors.email} or {errors.password}
+              </div>
+            )}
             <br />
-
-            <label>{t("pages.register.text.password")}</label>
+            <label>{t("pages.login.text.password")}</label>
             <input
               type="password"
               id="password"
               name="password"
-              placeholder={t("pages.register.text.passwordph")}
+              placeholder={t("pages.login.text.passwordph")}
               value={this.state.password}
               onChange={(e) => {
                 this.setState({ password: e.target.value });
@@ -166,19 +162,14 @@ constructor(props) {
               type="submit"
               onClick={(e) => this.execute(e)}
               value={t("pages.login.text.submit")}
-            />       
+            />
+          
           </form>
+          }
         </div>
       </div>
-      </div>
-
-     
-    )
+    );
   }
 }
 
 export default withNamespaces()(Login);
-
-
-
-

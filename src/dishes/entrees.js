@@ -6,10 +6,10 @@ class Entrees extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div class ="dishes" >
+      <div className ="dishes" >
            {t("pages.entrees.text.header1")} 
         <div>
-        <div style={{ padding: "10px 20px", textAlign: "center", color: "white"}}>
+        <div>
         <img src={entree1} alt="entree1" /> 
           </div>       
          

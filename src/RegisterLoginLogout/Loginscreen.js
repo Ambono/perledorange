@@ -73,9 +73,7 @@ class Loginscreen extends Component {
                    })
     }
   }
-  render() {
-    const { t } = this.props;
-   
+  render() {   
     return (
       <div className="loginscreen">
         {this.state.loginscreen}
