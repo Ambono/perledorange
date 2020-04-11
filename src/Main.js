@@ -3,6 +3,7 @@ import { Route, NavLink, HashRouter } from "react-router-dom";
 
 import Dropdown from "react-bootstrap/Dropdown";
 import Home from "./Home";
+import MyPage from "./RegisterLoginLogout/MyPage"
 import Services from "./Services";
 import Contact from "./Contact";
 import Menue from "./Menue";
@@ -15,6 +16,8 @@ import { withNamespaces } from "react-i18next";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from 'react-bootstrap/Nav'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import RetrieveMyMessages from "./Messages/RetrieveMyMessages";
+import CreateBlog from "./Blog/CreateBlog";
 
 
 //https://dev.to/ksushiva/how-to-translate-your-react-js-app-with-i18next-12mn
@@ -64,7 +67,7 @@ class Main extends Component {
     */}
           <ul className="header" >
             <li>
-              <NavLink to="/Home">{t("navbar.home")}</NavLink>
+              <NavLink to="/home">{t("navbar.home")}</NavLink>
             </li>
             <li>
               <NavLink to="/services">{t("navbar.services")}</NavLink>
@@ -102,7 +105,7 @@ class Main extends Component {
             
           <div className="content">
             <Route exact path="/" component={Home} />
-            <Route path="/Home" component={Home} />
+            <Route path="/home" component={Home} />
             <Route path="/services" component={Services} />
             <Route path="/menue" component={Menue} />
             <Route path="/reference" component={References} />
@@ -110,6 +113,9 @@ class Main extends Component {
             <Route path="/blog" component={Blog} />
             <Route path="/loginscreen" component={Loginscreen} />
             <Route path="/contact" component={Contact} />
+            <Route path="/mypage" component={MyPage} />
+            <Route path="/mymessages" component={RetrieveMyMessages} />
+              <Route path="/updateblog" component={CreateBlog} />
           </div>
         </div>
 

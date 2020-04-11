@@ -116,7 +116,7 @@ class Login extends Component {
     const { errors } = this.state;
      if (this.state.isLoggedIn)
   { 
-    return <Redirect to={{ pathname: "/MyPage" }} />
+    return <Redirect to={{ pathname: "/mypage" }} />
   }
     return (
       <div className="container">

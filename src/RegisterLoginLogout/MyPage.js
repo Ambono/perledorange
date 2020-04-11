@@ -17,8 +17,7 @@ constructor(props) {
 
   render() {
    // const { t } = this.props;
-    return (
-      <HashRouter >
+    return (     
       <div className="contact">
       <div id="contact_content">
             <h1>I am on my page</h1>
@@ -31,12 +30,11 @@ constructor(props) {
               </li> 
             </ul>
             <div>
-              <Route path="/mymessages" component={RetrieveMyMessages} />
-              <Route path="/updateblog" component={CreateBlog} />
+              {/* <Route path="/mymessages" component={RetrieveMyMessages} />
+              <Route path="/updateblog" component={CreateBlog} /> */}
             </div>
             </div>
-          </div>
-          </HashRouter>
+          </div>        
       );    
   }
 }
