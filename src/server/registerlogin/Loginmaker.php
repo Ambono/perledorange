@@ -52,7 +52,7 @@ $user_ip = getUserIP();
 
 if ($count == 1) {
   
-    $queryvisitors = "insert into sitevisits(visitor_session, Date, usertype, IPs) values('$myusername', now(),'registered','$user_ip')";
+    $queryvisitors = "insert into sitevisits(Visitor_session, Date, Usertype, IPs) values('$myusername', now(),'registered','$user_ip')";
     $result_sessions = mysqli_query($conn, $queryvisitors);
 
     if (!$result_sessions) {

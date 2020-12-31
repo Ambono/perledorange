@@ -1,8 +1,9 @@
 {
   "ngrok->port88": "",
   "NGROK_HTTP": "http://d63a318818f4.ngrok.io",
-  "NGROK": "https://d63a318818f4.ngrok.io/",
-  "SEND_EMAIL": "swiftmailer/perledorangesendcontactusmessage.php",
+  "NGROK": "https://ca29fbf726ae.ngrok.io/",
+  "PATH_SWIFTMAILER": "SwiftMailer/",
+  "SEND_EMAIL": "perledorangesendcontactusemail.php",
   "CONTACTUS": "ContactUsMessages.php",
   "LIVE_URL": "http://perledorange.com/",
   "REGISTER": "Register.php",

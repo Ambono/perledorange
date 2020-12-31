@@ -13,14 +13,7 @@ $number = mysqli_real_escape_string($conn, $data['number']);
 $message = mysqli_real_escape_string($conn, $data['message']);
 
  echo "received this data: " . $fname .' '. $lname.' '.$number.' '.$email.' '.$message.'<br>'; 
- 
-          $emailBody ="";
- 	  $Email ="";
- 	  $Phone ="";
-          $RecipientEmail = "vanessa.bonogo@gmail.com";
-          $Message ="";
-          $headers="";
- 
+          
 $sql = "INSERT INTO contactmessages (FirstName, LastName, Email, Phone, Subject, Date) 
         VALUES (  '$fname', '$lname', '$email', '$number', '$message' , now())";
   
