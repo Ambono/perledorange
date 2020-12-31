@@ -1,11 +1,8 @@
 <?php 
-include_once('../config/config.php');
+include_once("./Config.php");
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+
 $_SESSION['token_temp_user'] = session_id();
-
-
-
  
 $data = json_decode(file_get_contents("php://input"), true);
 print_r("<br> start printing data: ". $data.'<br>');

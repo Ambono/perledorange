@@ -1,8 +1,8 @@
 <?php
 
-include_once('../config/config.php');
+include_once("./Config.php");
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+
 
 $data = json_decode(file_get_contents("php://input"), true);
 
