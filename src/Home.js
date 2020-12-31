@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className="home">
+      <div >
         <Vanessa />
         <h2>
           {t("pages.home.text.header1")}

@@ -5,6 +5,7 @@ import { withNamespaces } from "react-i18next";
 import { Redirect } from "react-router";
 import Home from "../Home";
 import MyPage from "./MyPage";
+import ConfigData from "../config.json";
 
 const validEmailRegex = RegExp(
   /^(([^<>()\\[\]\\.,;:\s@\\"]+(\.[^<>()\\[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@(([^<>()[\]\\.,;:\s@\\"]+\.)+[^<>()[\]\\.,;:\s@\\"]{2,})$/i
@@ -67,10 +68,12 @@ class Login extends Component {
   };
 
   handleSubmit = (e) => {
-    const BASE_URL = "http://localhost:50/perledorange/serverperledorange";
-    const API_PATH = BASE_URL + "/RegisterLogin/LoginMaker.php";
+    // const BASE_URL = "http://localhost:50/perledorange/serverperledorange"-->ngrok port 88;
+    //const BASE_URL =   "https://603b9d0854f9.ngrok.io";
+    // const BASE_URL =   "http://perledorange.com";
+    //const API_PATH = BASE_URL + "/RegisterLogin/LoginMaker.php";
     //const API_PATH ="https://f62c4a80.ngrok.io/messages/sendcontactmessages.php";
-
+    const API_PATH = ConfigData.LIVE_URL + ConfigData.LOGIN;
     e.preventDefault();
     axios({
       method: "post",
@@ -114,13 +117,12 @@ class Login extends Component {
   render() {
     const { t } = this.props;
     const { errors } = this.state;
-     if (this.state.isLoggedIn)
-  { 
-    return <Redirect to={{ pathname: "/mypage" }} />
-  }
+    if (this.state.isLoggedIn) {
+      return <Redirect to={{ pathname: "/mypage" }} />;
+    }
     return (
-      <div className="container">
-        <div id="container_content">
+      <div>
+        <div>
           <h1>{t("pages.login.text.header1")}</h1>
           <form action="#">
             <br />
@@ -163,9 +165,7 @@ class Login extends Component {
               onClick={(e) => this.execute(e)}
               value={t("pages.login.text.submit")}
             />
-          
           </form>
-          }
         </div>
       </div>
     );

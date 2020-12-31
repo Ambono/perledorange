@@ -7,10 +7,7 @@ var NavBar = React.createClass({
     render() {
       return (
         <div>
-          <ul>
-            <a onClick={() => history.push('page1') }>Page 1</a>
-            <a onClick={() => history.push('page2') }>Page 2</a>
-          </ul>
+       
         </div>
       )
     }
@@ -21,10 +18,7 @@ var NavBar = React.createClass({
 render((
   <li>
 <Router>
-  <Route path="/" component={App}>
-    <Route path="page1" component={Page1} />
-    <Route path="page2" component={Page2} />
-  </Route>
+  
   <Route path="/login" component={Login} />
 </Router>
   </li>

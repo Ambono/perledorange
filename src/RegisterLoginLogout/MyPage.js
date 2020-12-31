@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withNamespaces } from 'react-i18next';
 import { Route, NavLink, HashRouter } from "react-router-dom";
-import RetrieveMyMessages from "../Messages/RetrieveMyMessages";
-import CreateBlog from "../Blog/CreateBlog";
+import RetrieveMyMessages from "../messages/RetrieveMyMessages";
+import CreateBlog from "../blog/CreateBlog";
 
   
 
@@ -18,8 +18,8 @@ constructor(props) {
   render() {
    // const { t } = this.props;
     return (     
-      <div className="contact">
-      <div id="contact_content">
+      <div >
+      <div >
             <h1>I am on my page</h1>
             <ul >
               <li>

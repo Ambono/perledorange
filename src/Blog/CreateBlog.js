@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withNamespaces } from "react-i18next";
-import Login from "../RegisterLoginLogout/Login";
+import Login from "../registerloginlogout/Login";
 
 const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i

@@ -6,11 +6,11 @@ class Entrees extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className ="dishes" >
+      <div  >
            {t("pages.entrees.text.header1")} 
         <div>
         <div>
-        <img src={entree1} alt="entree1" /> 
+        <img src={entree1} alt="entree1"  width="50%" height="50%" /> 
           </div>       
          
          <div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withNamespaces } from "react-i18next";
+import ConfigData from "./config.json";
 
 const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -75,9 +76,11 @@ class Contact extends Component {
   };
 
   handleSubmit = (e) => {
-    // const API_PATH = "http://192.168.0.21:60/messages/sendcontactmessages.php";
-    const API_PATH =
-      "https://f62c4a80.ngrok.io/messages/sendcontactmessages.php";
+    // const API_PATH = "http://192.168.0.21:60/messages/sendcontactmessages.php"-->ngrok port 60;
+    //const API_PATH =
+    // "https://5e03dfb24ebb.ngrok.io/messages/sendcontactmessages.php";
+    // "http://perledorange.com/sendcontactmessages.php";
+    const API_PATH = ConfigData.LIVE_URL + ConfigData.CONTACTUS;
     e.preventDefault();
     axios({
       method: "post",
@@ -100,9 +103,9 @@ class Contact extends Component {
   };
 
   sendEmail = (e) => {
-    const API_PATH = "https://760646f9.ngrok.io/index.php";
+    // const API_PATH = "https://db11e019.ngrok.io/perledorangesendemail.php";
     // const API_PATH = "http://192.168.0.21:88/index.php";
-
+    const API_PATH = ConfigData.NGROK + ConfigData.SEND_EMAIL;
     e.preventDefault();
     axios({
       method: "post",
@@ -149,8 +152,8 @@ class Contact extends Component {
     const { t } = this.props;
     const { errors } = this.state;
     return (
-      <div className="contact">
-        <div id="contact_content">
+      <div>
+        <div>
           <form action="#">
             <label>{t("pages.contact.text.firstname")}</label>
             <input
@@ -239,9 +242,6 @@ class Contact extends Component {
               )}
             </div>
           </form>
-
-
-     
         </div>
       </div>
     );

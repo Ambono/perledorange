@@ -75,7 +75,7 @@ class Loginscreen extends Component {
   }
   render() {   
     return (
-      <div className="loginscreen">
+      <div>
         {this.state.loginscreen}
         <div>
           {this.state.loginmessage}
@@ -85,8 +85,7 @@ class Loginscreen extends Component {
               type="submit"
               onClick={(event) => this.handleClick(event)}
               value= {this.state.buttonLabel}
-             />
-             
+             />             
            </div>
           </div>
         </div>

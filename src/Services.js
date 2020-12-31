@@ -7,8 +7,8 @@ class Services extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className="service">
-        <h1>{t("pages.services.text.header1")}</h1>
+      <div >
+        {/* <h1>{t("pages.services.text.header1")}</h1> */}
         <h2>{t("pages.services.text.header2")}</h2>
         <p>{t("pages.services.text.paragraph1")}</p>
         <p>{t("pages.services.text.paragraph2")}</p>
@@ -17,7 +17,7 @@ class Services extends Component {
           class="center-image"
           style={{ padding: "10px 20px", textAlign: "center", color: "white" }}
         >
-          <img src={img1} alt="prizerotaryclub" />
+          <img src={img1} alt="prizerotaryclub"  />
         </div>
         <div
           class="center-image"

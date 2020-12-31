@@ -37,11 +37,11 @@ ul.header li a {
 }
 
 #div_firstpage{
-  background-image: url("./img/accueil.PNG"), url("./img/pages.PNG");
+  background-image: url("./img/accueil.PNG");
   background-repeat: no-repeat, repeat;
-  background-color: #cccccc;
-  
+  background-color: #ffff;
 }
+
 .booking {
   background-color: #c0c0c0;
   padding: 5px 20px 15px 20px;
@@ -51,36 +51,32 @@ ul.header li a {
 
 .home {
   background-color: #ffcc77e4;
-  padding: 20px;
   text-align: left; 
   padding: 10px 20px;
-  margin: 25px;
+  margin: 30px;
   color: #800080;
 }
 .service {
   background-color: #ffcc77e4;
-  padding: 20px;
   text-align: left;
   padding: 10px 20px;
-  margin: 25px;
+  margin: 30px;
   color: #800080;
 }
 
 .dishes {
-  background-color: #ffcc77e4;
-  padding: 20px;
+  background-color: #ffcc77e4;  
   text-align: center; 
   padding: 10px 20px;
-  margin: 25px;
+  margin: 30px;
   color: #800080; 
 }
 
 .contact {
-  background-color: #ffcc77e4;
-  padding: 20px; 
+  background-color: #ffcc77e4; 
   text-align:right; 
   padding: 10px 20px;
-  margin: 25px;
+  margin: 30px;
   color: #800080;
 }
 
@@ -91,7 +87,7 @@ ul.header li a {
   border-radius: 3px;
   text-align:right; 
   padding: 10px 20px;
-  margin: 25px;
+  margin: 30px;
   color: #800080;
 }
 
@@ -108,6 +104,7 @@ align-content: left;
 
 .content {
   padding: 60px;
+  margin-top:60px
 }
 
 .content h2 {
@@ -271,4 +268,5 @@ span.price {
     top: 40px;
     bottom: 40px;
   }
+
 }

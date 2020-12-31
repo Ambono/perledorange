@@ -6,12 +6,12 @@ class Plats extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className ="dishes">
+      <div >
         <div>
         {t("pages.plats.text.header1")}  
         <div>
         <div>
-        <img src={plat1} alt="plat1" /> 
+        <img src={plat1} alt="plat1"  width="50%" height="50%"/> 
           </div>   
        
          

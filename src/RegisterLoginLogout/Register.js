@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withNamespaces } from "react-i18next";
 import Login from "./Login";
+import ConfigData from "../config.json";
 
 const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -26,7 +27,7 @@ class Register extends Component {
       email: "",
       number: "",
       password: "",
-      registrationSubmitted : false,
+      registrationSubmitted: false,
       error: null,
       errors: {
         fname: "",
@@ -45,7 +46,7 @@ class Register extends Component {
       !this.state.lname ||
       !this.state.email ||
       !this.state.number ||
-      !this.state.password 
+      !this.state.password
     ) {
       return false;
     }
@@ -86,9 +87,10 @@ class Register extends Component {
   };
 
   handleSubmit = (e) => {
-    const BASE_URL ="http://localhost:50/perledorange/serverperledorange";
-    const API_PATH = BASE_URL+"/RegisterLogin/Register.php";
+    //const BASE_URL ="http://localhost:50/perledorange/serverperledorange";
+    //const API_PATH = BASE_URL+"/RegisterLogin/Register.php";
     //const API_PATH ="https://f62c4a80.ngrok.io/messages/sendcontactmessages.php";
+    const API_PATH = ConfigData.LIVE_URL + ConfigData.REGISTER;
     console.log(
       "values",
       this.state.fname,
@@ -98,32 +100,32 @@ class Register extends Component {
     );
     var self = this;
     e.preventDefault();
-    
+
     axios({
       method: "post",
       url: `${API_PATH}`,
 
       data: this.state,
     })
-    .then(function (response) {
-      console.log(response);
-      if (response.data.code == 200) {
-        //  console.log("registration successfull");
-        var loginscreen = [];
-        loginscreen.push(<Login parentContext={this} />);
-        var loginmessage = "Not Registered yet.Go to registration";
-        self.props.parentContext.setState({
-          loginscreen: loginscreen,
-          loginmessage: loginmessage,
-          buttonLabel: "Register",
-          isLogin: true,
-          registrationSubmitted : true
-        });
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });    
+      .then(function (response) {
+        console.log(response);
+        if (response.data.code == 200) {
+          //  console.log("registration successfull");
+          var loginscreen = [];
+          loginscreen.push(<Login parentContext={this} />);
+          var loginmessage = "Not Registered yet.Go to registration";
+          self.props.parentContext.setState({
+            loginscreen: loginscreen,
+            loginmessage: loginmessage,
+            buttonLabel: "Register",
+            isLogin: true,
+            registrationSubmitted: true,
+          });
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   execute = (event) => {
@@ -137,7 +139,7 @@ class Register extends Component {
         lname: "",
         email: "",
         number: "",
-        password: ""
+        password: "",
       });
     } else {
       console.error("Invalid Form");
@@ -146,7 +148,10 @@ class Register extends Component {
   };
 
   handleSubmit(event) {
-    var apiBaseUrl = "http://localhost:50/api/";
+    //var apiBaseUrl = "http://localhost:50/api/"--->ngrok port 88;
+    //var apiBaseUrl = "https://603b9d0854f9.ngrok.io";
+    var apiBaseUrl = "http://perledorange.com";
+
     console.log(
       "values",
       this.state.fname,
@@ -178,7 +183,7 @@ class Register extends Component {
             loginmessage: loginmessage,
             buttonLabel: "Register",
             isLogin: true,
-            registrationSubmitted:true
+            registrationSubmitted: true,
           });
         }
       })
@@ -191,91 +196,91 @@ class Register extends Component {
     const { t } = this.props;
     const { errors } = this.state;
     return (
-      <div className="container">
-        <div id="container_content">
-        <form action="#">
-          <h1>{t("pages.register.text.header1")}</h1>
-          <label>{t("pages.register.text.firstname")}</label>
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            placeholder={t("pages.register.text.firstnameph")}
-            value={this.state.fname}
-            onChange={(e) => {
-              this.setState({ fname: e.target.value });
-              this.handleChange(e);
-            }}
-          />
-          {errors.fname.length > 0 && <div>{errors.fname}</div>}
+      <div>
+        <div>
+          <form action="#">
+            <h1>{t("pages.register.text.header1")}</h1>
+            <label>{t("pages.register.text.firstname")}</label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder={t("pages.register.text.firstnameph")}
+              value={this.state.fname}
+              onChange={(e) => {
+                this.setState({ fname: e.target.value });
+                this.handleChange(e);
+              }}
+            />
+            {errors.fname.length > 0 && <div>{errors.fname}</div>}
 
-          <br />
-          <label>{t("pages.register.text.lastname")}</label>
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            placeholder={t("pages.register.text.lastnameph")}
-            value={this.state.lname}
-            onChange={(e) => {
-              this.setState({ lname: e.target.value });
-              this.handleChange(e);
-            }}
-          />
-          {errors.lname.length > 0 && <div>{errors.lname}</div>}
-          <br />
-          <label>{t("pages.register.text.email")}</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder={t("pages.register.text.emailph")}
-            value={this.state.email}
-            onChange={(e) => {
-              this.setState({ email: e.target.value });
-              this.handleChange(e);
-            }}
-          />
-          {errors.email.length > 0 && <div>{errors.email}</div>}
-          <br />
+            <br />
+            <label>{t("pages.register.text.lastname")}</label>
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              placeholder={t("pages.register.text.lastnameph")}
+              value={this.state.lname}
+              onChange={(e) => {
+                this.setState({ lname: e.target.value });
+                this.handleChange(e);
+              }}
+            />
+            {errors.lname.length > 0 && <div>{errors.lname}</div>}
+            <br />
+            <label>{t("pages.register.text.email")}</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder={t("pages.register.text.emailph")}
+              value={this.state.email}
+              onChange={(e) => {
+                this.setState({ email: e.target.value });
+                this.handleChange(e);
+              }}
+            />
+            {errors.email.length > 0 && <div>{errors.email}</div>}
+            <br />
 
-          <label>{t("pages.register.text.phone")}</label>
-          <input
-            type="text"
-            id="number"
-            name="number"
-            placeholder={t("pages.register.text.phoneph")}
-            value={this.state.number}
-            onChange={(e) => {
-              this.setState({ number: e.target.value });
-              this.handleChange(e);
-            }}
-          />
-          {errors.number.length > 0 && <div>{errors.number}</div>}
-          <br />
+            <label>{t("pages.register.text.phone")}</label>
+            <input
+              type="text"
+              id="number"
+              name="number"
+              placeholder={t("pages.register.text.phoneph")}
+              value={this.state.number}
+              onChange={(e) => {
+                this.setState({ number: e.target.value });
+                this.handleChange(e);
+              }}
+            />
+            {errors.number.length > 0 && <div>{errors.number}</div>}
+            <br />
 
-          <label>{t("pages.register.text.password")}</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder={t("pages.register.text.passwordph")}
-            value={this.state.password}
-            onChange={(e) => {
-              this.setState({ password: e.target.value });
-              this.handleChange(e);
-            }}
-          />
-          {errors.password.length > 0 && <div>{errors.password}</div>}
+            <label>{t("pages.register.text.password")}</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder={t("pages.register.text.passwordph")}
+              value={this.state.password}
+              onChange={(e) => {
+                this.setState({ password: e.target.value });
+                this.handleChange(e);
+              }}
+            />
+            {errors.password.length > 0 && <div>{errors.password}</div>}
 
-          <br />
-          <input
-            type="submit"
-            onClick={(e) => this.execute(e)}
-            value={t("pages.register.text.submit")}
-          />
+            <br />
+            <input
+              type="submit"
+              onClick={(e) => this.execute(e)}
+              value={t("pages.register.text.submit")}
+            />
 
-           <div>
+            <div>
               {this.state.registrationSubmitted && (
                 <div>
                   {t("pages.register.text.thankyou1")} <br />
@@ -285,7 +290,7 @@ class Register extends Component {
                 </div>
               )}
             </div>
-            </form>
+          </form>
         </div>
       </div>
     );

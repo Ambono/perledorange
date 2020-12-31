@@ -4,10 +4,9 @@ class Vanessa extends Component {
   render() {
     return (
       <div
-        class="center-image"
-        style={{ padding: "10px 20px", textAlign: "center", color: "white" }}
+     
       >
-        >
+        
         <img src={vanessa1} alt="vanessa" width="50%" height="50%"/>
       </div>
     );
